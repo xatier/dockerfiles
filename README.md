@@ -20,16 +20,31 @@ registry.salsa.debian.org/reproducible-builds/diffoscope   latest              b
 
 ## Usage
 
-Build the Dockerfile locally. (I will push to GitHub registry once I get the access)
+Pull the image from GitHub
 
 ```bash
+# pull
+docker pull docker.pkg.github.com/xatier/diffoscope-arch/diffoscope-arch:latest
+
+# run
+docker run --rm -t -w $(pwd) -v $(pwd):$(pwd):ro docker.pkg.github.com/xatier/diffoscope-arch/diffoscope-arch:latest file1 file2
+```
+
+Build the Dockerfile locally
+
+```
 # build
 docker build --no-cache -t xatier/diffoscope-arch .
 
 # run
 docker run --rm -t -w $(pwd) -v $(pwd):$(pwd):ro xatier/diffoscope-arch:latest file1 file2
+```
 
+(Maintainance) Update docker image on GitHub
+
+```bash
 # push to registry
+# build the image
 docker tag 647ad3f846af docker.pkg.github.com/xatier/diffoscope-arch/diffoscope-arch:latest
 docker push docker.pkg.github.com/xatier/diffoscope-arch/diffoscope-arch:latest
 ```
