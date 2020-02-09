@@ -12,4 +12,4 @@ RUN git clone https://aur.archlinux.org/yay.git && \
     cd yay && makepkg -sri --needed --noconfirm
 RUN yay -S --noeditmenu --nodiffmenu --noconfirm popcorntime-bin
 
-CMD /usr/bin/popcorntime
+CMD sudo /usr/bin/popcorntime
