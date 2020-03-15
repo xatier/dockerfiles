@@ -8,14 +8,13 @@ I used to have the following dockerfiles, now consolidate them to one single rep
 - [popcorn-docker](https://github.com/xatier/popcorn-docker)
 - [diffoscope-arch](https://github.com/xatier/diffoscope-arch)
 
-
-# Preserve the history
+## Preserve the history
 
 I do the following trick to preserve the commit history from the other repos.
 
 ```bash
 git remote add diffoscope git@github.com:xatier/diffoscope-arch.git
-git pull diffoscope --allow-unrelated-histories  master --no-rebase 
+git pull diffoscope --allow-unrelated-histories  master --no-rebase
 mv Dockerfile diffoscope-arch/
 git add .
 git commit
