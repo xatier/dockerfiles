@@ -1,0 +1,38 @@
+FROM archlinux/base:latest
+
+# pacman
+RUN pacman -Syuu --noconfirm --needed \
+    base \
+    base-devel \
+    git \
+    pacman-contrib \
+    python \
+    sudo \
+    vim \
+    wget
+
+# user setup
+RUN useradd --create-home xatier
+RUN echo "xatier ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/xatier
+RUN echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen && locale-gen
+ENV LANG en_US.UTF-8
+
+WORKDIR /home/xatier
+USER xatier
+
+# AUR yay
+RUN git clone https://aur.archlinux.org/yay.git
+WORKDIR /home/xatier/yay
+RUN makepkg -sri --needed --noconfirm
+
+# install stuff
+# RUN pacman -Syuu --noconfirm --needed <stuff>
+# RUN yay -S --noeditmenu --nodiffmenu --noconfirm <stuff>
+
+# cleanup
+WORKDIR /home/xatier
+RUN sudo paccache -rfk0 && rm -rf /home/xatier/yay
+
+ENV EDITOR vim
+
+CMD ["bash"]
