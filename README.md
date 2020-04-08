@@ -3,12 +3,20 @@
 My Dockerfile collections.
 
 This is my collection of Dockerfile.
+
+## Build
+
+```bash
+# this will build all subdirectories
+make
+```
+
+## Preserve the history
+
 I used to have the following dockerfiles, now consolidate them to one single repo for all kinds.
 
 - [popcorn-docker](https://github.com/xatier/popcorn-docker)
 - [diffoscope-arch](https://github.com/xatier/diffoscope-arch)
-
-## Preserve the history
 
 I do the following trick to preserve the commit history from the other repos.
 
