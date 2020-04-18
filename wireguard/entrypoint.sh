@@ -15,6 +15,7 @@ go build
 # use python version
 # python server.py
 
+# use dante
 # sleep 5
 # /usr/bin/sockd -f /srv/sockd.conf -p /dev/null
 bash
