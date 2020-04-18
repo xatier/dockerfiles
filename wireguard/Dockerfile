@@ -3,6 +3,7 @@ FROM xatier/arch-dev:latest
 USER root
 RUN pacman -Syuu --noconfirm --needed \
     dante \
+    go \
     mtr \
     openresolv \
     wireguard-tools

@@ -8,7 +8,12 @@ curl ipinfo.io
 
 git clone https://github.com/xatier/toy-socks5.git
 cd toy-socks5
-python server.py
+
+go build
+./toy-socks5
+
+# use python version
+# python server.py
 
 # sleep 5
 # /usr/bin/sockd -f /srv/sockd.conf -p /dev/null
