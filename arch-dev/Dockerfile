@@ -4,7 +4,9 @@ FROM archlinux/base:latest
 RUN pacman -Syuu --noconfirm --needed \
     base \
     base-devel \
+    curl \
     git \
+    htop \
     pacman-contrib \
     python \
     sudo \
