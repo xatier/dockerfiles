@@ -12,7 +12,7 @@ git clone https://github.com/xatier/toy-socks5.git
 cd toy-socks5
 
 go build
-./toy-socks5
+./toy-socks5 --global
 
 # use python version
 # python server.py
