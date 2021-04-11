@@ -1,6 +1,8 @@
 .PHONY: all build run
 
-image = xatier/arch-dev:latest
+name = arch-dev:latest
+image = xatier/$(name)
+registry = docker.pkg.github.com/xatier/dockerfiles
 
 all: build run
 
@@ -9,3 +11,8 @@ build:
 
 run:
 	podman run -it --rm  $(image)
+
+push:
+	podman images $(image)
+	podman tag $(shell podman images $(image) -q) $(registry)/$(name)
+	podman push $(registry)/$(name)

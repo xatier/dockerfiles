@@ -17,5 +17,8 @@ Requirements: [podman](https://github.com/containers/libpod).
 See [Makefile](Makefile) for details.
 
 ```bash
-make
+make build
+
+# push to GitHub container registry
+make build && make push
 ```
