@@ -4,7 +4,7 @@ name = arch-dev:latest
 image = xatier/$(name)
 registry = docker.pkg.github.com/xatier/dockerfiles
 
-all: build run
+all: build run push
 
 build:
 	podman build --squash --no-cache -t $(image) .
