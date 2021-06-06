@@ -1,6 +1,13 @@
+# use reflector to find faster mirrorlist
+From archlinux/archlinux:base as reflector
+RUN pacman -Syy --noconfirm --needed reflector
+RUN reflector --verbose --country 'United States' --latest 20 \
+    --protocol https --age 12 --sort rate --save /mirrorlist
+
 FROM archlinux/archlinux:base
 
 # pacman
+COPY --from=reflector /mirrorlist /etc/pacman.d/mirrorlist
 RUN pacman -Syuu --noconfirm --needed \
     base \
     base-devel \
