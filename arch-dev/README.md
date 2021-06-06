@@ -4,7 +4,7 @@
 
 ## Base image
 
-This image is based on [archlinux/base:latest](https://github.com/archlinux/archlinux-docker) image from the Archlinux community.
+This image is based on [archlinux/archlinux:base](https://github.com/archlinux/archlinux-docker) image from the Archlinux community.
 
 ## AUR helper
 
