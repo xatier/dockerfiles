@@ -13,20 +13,26 @@ build:
 run:
 	podman run --rm -it \
 		-v $(wg_conf):/srv/wg0.conf \
-		--privileged \
+		--cap-add NET_ADMIN \
+		--cap-add NET_RAW \
+		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
 		-p 127.0.0.1:1081:1081 \
 		$(image)
 
 davy:
 	podman run --rm -it \
 		-v $(davy_wg_conf):/srv/wg0.conf \
-		--privileged \
+		--cap-add NET_ADMIN \
+		--cap-add NET_RAW \
+		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
 		-p 127.0.0.1:1082:1081 \
 		$(image)
 
 az:
 	podman run --rm -it \
 		-v $(az_wg_conf):/srv/wg0.conf \
-		--privileged \
+		--cap-add NET_ADMIN \
+		--cap-add NET_RAW \
+		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
 		-p 127.0.0.1:1083:1081 \
 		$(image)
