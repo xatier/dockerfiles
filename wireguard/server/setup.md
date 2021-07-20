@@ -58,6 +58,13 @@ sudo modprobe wireguard
 lsmod | grep wireguard
 ```
 
+- add `wireguard` into `/etc/modules-load.d/modules.conf`
+
+```bash
+sudo sh -c "echo 'wireguard' >> /etc/modules-load.d/modules.conf"
+cat /etc/modules-load.d/modules.conf
+```
+
 - uncomment or add the following in `/etc/sysctl.conf` to allow forwarding
 
 ```bash
