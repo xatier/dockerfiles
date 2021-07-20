@@ -7,8 +7,17 @@ image: Debian 10 "Buster" - Gen1
 size: Standard B1ls - 1 vcpu, 0.5 GiB memory (~$5/mo)
 ```
 
+- Azure VM currently only supports RSA keys, use the RSA key during creation.
+- copy over my own ED25519 key later
+
 ```bash
 ssh <server IP> -i ~/.ssh/azure_rsa
+ssh-copy-id -i .ssh/azure_ed25519.pub <server domain>
+```
+
+- set `TERM` shell variable
+
+```bash
 export TERM=xterm
 ```
 
