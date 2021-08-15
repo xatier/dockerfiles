@@ -2,7 +2,7 @@
 
 name = diffoscope-arch:latest
 image = xatier/$(name)
-registry = docker.pkg.github.com/xatier/dockerfiles
+registry = ghcr.io/xatier
 
 all: build run
 

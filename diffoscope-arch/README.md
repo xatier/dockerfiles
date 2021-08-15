@@ -24,10 +24,10 @@ Pull the image from GitHub
 
 ```bash
 # pull
-podman pull docker.pkg.github.com/xatier/dockerfiles/diffoscope-arch:latest
+podman pull ghcr.io/xatier/diffoscope-arch:latest
 
 # run
-podman run --rm -t -w $(pwd) -v $(pwd):$(pwd):ro docker.pkg.github.com/xatier/dockerfiles/diffoscope-arch:latest file1 file2
+podman run --rm -t -w $(pwd) -v $(pwd):$(pwd):ro ghcr.io/xatier/diffoscope-arch:latest file1 file2
 ```
 
 Build the Dockerfile locally

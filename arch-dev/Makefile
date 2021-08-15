@@ -2,7 +2,7 @@
 
 name = arch-dev:latest
 image = xatier/$(name)
-registry = docker.pkg.github.com/xatier/dockerfiles
+registry = ghcr.io/xatier
 
 all: build run push
 
