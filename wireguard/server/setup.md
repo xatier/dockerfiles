@@ -1,10 +1,20 @@
-# Setup wireguard on Debian 10 Buster on Azure VM
+# Setup wireguard on Debian 11 Bullseye on Azure VM
 
 ## Azure VM creation
 
 ```text
-image: Debian 10 "Buster" - Gen1
+image: Debian 11 "Bullseye" - Gen2
 size: Standard B1ls - 1 vcpu, 0.5 GiB memory (~$5/mo)
+```
+
+- find available Debian images
+
+```bash
+# az location to use
+az account list-locations --output table
+
+# find Debian offers
+az vm image list-offers --location <location> --publisher Debian --output table
 ```
 
 - Azure VM currently only supports RSA keys, use the RSA key during creation.
@@ -28,21 +38,13 @@ export TERM=xterm
 ```bash
 sudo apt update
 sudo apt upgrade
-sudo apt install git tmux mosh glances htop curl
+sudo apt install git tmux mosh htop curl
 ```
 
 - install kernel headers and `resolvconf`
 
 ```bash
 sudo apt install linux-headers-cloud-amd64 resolvconf
-```
-
-- add Debian 10 buster backports apt source
-
-```bash
-sudo sh -c "echo 'deb http://deb.debian.org/debian buster-backports main contrib non-free' > /etc/apt/sources.list.d/buster-backports.list"
-cat /etc/apt/sources.list.d/buster-backports.list
-sudo apt update
 ```
 
 - install wireguard
@@ -82,7 +84,13 @@ net.ipv6.conf.all.forwarding=1
 sudo sysctl --system
 ```
 
-- pick a wireguard server port and add to the networking rules
+- reboot the system to ensure everything is ready
+
+```bash
+sudo reboot
+```
+
+- pick a wireguard server port and add to the Azure VM networking rules
 
 ```text
 Source: Any
