@@ -4,7 +4,7 @@ on: [workflow_dispatch]
 
 env:
   REGISTRY_USER: ${{ github.actor }}
-  REGISTRY_PASSWORD: ${{ github.token }}
+  REGISTRY_PASSWORD: ${{ secrets.GH_TOKEN }}
   IMAGE_REGISTRY: ghcr.io/${{ github.repository_owner }}
 
 jobs:
