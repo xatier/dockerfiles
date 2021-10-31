@@ -1,6 +1,9 @@
 name: GHCR
 
-on: [workflow_dispatch]
+on:
+  schedule:
+    - cron: '0 0 * * SUN'
+  workflow_dispatch:
 
 env:
   REGISTRY_USER: ${{ github.actor }}
