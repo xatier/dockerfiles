@@ -47,6 +47,19 @@ sudo apt install git tmux mosh htop curl
 sudo apt install linux-headers-cloud-amd64 resolvconf
 ```
 
+- restart `systemd-resolved` and ensure `/etc/resolv.conf` is configured properly
+
+```bash
+sudo systemctl restart systemd-resolved
+cat /etc/resolv.conf
+```
+
+- add hostname into `/etc/hosts`
+
+```bash
+vim /etc/hosts
+```
+
 - install wireguard
 
 ```bash
