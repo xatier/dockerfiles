@@ -47,7 +47,8 @@ sudo apt install git tmux mosh htop curl
 sudo apt install linux-headers-cloud-amd64 resolvconf
 ```
 
-- restart `systemd-resolved` and ensure `/etc/resolv.conf` is configured properly
+- restart `systemd-resolved` and ensure `/etc/resolv.conf` is configured
+properly
 
 ```bash
 sudo systemctl restart systemd-resolved
@@ -159,3 +160,22 @@ vim wg0.conf
 cd ~/
 ~/wg.sh start
 ```
+
+## IP management
+
+Sometimes Azure public IPs may be acting weird, previous users of these
+public IPs might have done some suspicious activities with them.
+
+One can use the `new_ip.sh` script to allocate a new IP and switch to a new
+one.
+
+```bash
+# update Azure resource group name and Azure region
+vim ./new_ip.sh
+
+./new_ip.sh
+```
+
+One the new IP has been created, navigate to **Azure Public IP Addresses
+service**, select the newly created IP, then *Associate* it to a VM's
+network interface.
