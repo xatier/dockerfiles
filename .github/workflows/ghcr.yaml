@@ -43,3 +43,9 @@ jobs:
         run: |
           make build
           make push
+
+      - name: '[diffoscope] Build and push'
+        working-directory: ./diffoscope-arch
+        run: |
+          make build
+          make push
