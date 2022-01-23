@@ -1,6 +1,9 @@
-.PHONY: all build run
+.PHONY: all build run push
 
-image = xatier/wireguard:latest
+name = wireguard:latest
+image = xatier/$(name)
+registry = ghcr.io/xatier
+
 wg_conf = /home/xatier/wg/wg0.conf
 davy_wg_conf = /home/xatier/wg/davy.conf
 az_wg_conf = /home/xatier/wg/az.conf
@@ -11,6 +14,11 @@ all: build run
 
 build:
 	podman build --no-cache -t $(image) .
+
+push:
+	podman images $(image)
+	podman tag $(shell podman images $(image) -q) $(registry)/$(name)
+	podman push $(registry)/$(name)
 
 run:
 	podman run --rm -it \

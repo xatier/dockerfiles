@@ -32,6 +32,12 @@ jobs:
           make build
           make push
 
+      - name: '[wireguard] Build and push'
+        working-directory: ./wireguard
+        run: |
+          make build
+          make push
+
       - name: '[consider] Build and push'
         working-directory: ./consider
         run: |
