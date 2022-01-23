@@ -1,18 +1,13 @@
-.PHONY: all build run
+.PHONY: all build push
 
 name = consider:latest
 image = xatier/$(name)
 registry = ghcr.io/xatier
-pwd = $(shell pwd)
 
-all: build run push
+all: build push
 
 build:
 	podman build --squash --no-cache -t $(image) .
-
-run:
-	# use -t flag to allocate virtual terminal
-	podman run -t --rm -v "$(pwd):/mnt:ro" $(image)
 
 push:
 	podman images $(image)

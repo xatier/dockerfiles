@@ -1,4 +1,4 @@
-.PHONY: all build run
+.PHONY: all build run push
 
 name = arch-dev:latest
 image = xatier/$(name)
