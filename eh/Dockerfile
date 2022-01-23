@@ -7,4 +7,5 @@ RUN pacman -Syuu --noconfirm --needed \
 COPY ./entrypoint.sh /srv/entrypoint.sh
 
 WORKDIR /eh
+USER xatier
 ENTRYPOINT ["/srv/entrypoint.sh"]

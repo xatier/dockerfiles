@@ -18,4 +18,3 @@ make
 ## Security concerns
 
 - The container is running with `NET_ADMIN` and `NET_RAW` capabilities.
-- The container is running with `root` user since it needs `rw` access to the data.
