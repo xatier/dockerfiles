@@ -1,4 +1,4 @@
-FROM xatier/arch-dev:latest
+FROM ghcr.io/xatier/arch-dev:latest
 
 USER root
 RUN pacman -Syuu --noconfirm --needed \

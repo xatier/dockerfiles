@@ -1,13 +1,20 @@
 .PHONY: all build run
 
-image = xatier/consider:latest
+name = consider:latest
+image = xatier/$(name)
+registry = ghcr.io/xatier
 pwd = $(shell pwd)
 
-all: build run
+all: build run push
 
 build:
-	podman build --no-cache -t $(image) .
+	podman build --squash --no-cache -t $(image) .
 
 run:
 	# use -t flag to allocate virtual terminal
 	podman run -t --rm -v "$(pwd):/mnt:ro" $(image)
+
+push:
+	podman images $(image)
+	podman tag $(shell podman images $(image) -q) $(registry)/$(name)
+	podman push $(registry)/$(name)
