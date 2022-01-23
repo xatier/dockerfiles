@@ -13,7 +13,7 @@ jp_wg_conf = /home/xatier/wg/jp.conf
 all: build run
 
 build:
-	podman build --no-cache -t $(image) .
+	podman build --squash --no-cache -t $(image) .
 
 push:
 	podman images $(image)
