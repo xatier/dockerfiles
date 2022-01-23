@@ -38,6 +38,12 @@ jobs:
           make build
           make push
 
+      - name: '[eh] Build and push'
+        working-directory: ./eh
+        run: |
+          make build
+          make push
+
       - name: '[consider] Build and push'
         working-directory: ./consider
         run: |

@@ -1,7 +1,9 @@
-.PHONY: all build run
+.PHONY: all build run push
 
 name = eh:latest
 image = xatier/$(name)
+registry = ghcr.io/xatier
+
 data_path = /path/to/eh/data
 wg_conf = /path/to/wiregaurd/config
 
@@ -9,6 +11,11 @@ all: build run
 
 build:
 	podman build --squash --no-cache -t $(image) .
+
+push:
+	podman images $(image)
+	podman tag $(shell podman images $(image) -q) $(registry)/$(name)
+	podman push $(registry)/$(name)
 
 run:
 	podman run --rm -it \

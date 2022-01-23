@@ -1,4 +1,4 @@
-FROM xatier/wireguard:latest
+FROM ghcr.io/xatier/wireguard:latest
 
 USER root
 RUN pacman -Syuu --noconfirm --needed \
