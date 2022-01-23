@@ -2,7 +2,7 @@
 FROM archlinux/archlinux:base
 
 # pick a few dependencies
-# https://git.archlinux.org/svntogit/community.git/tree/trunk/PKGBUILD?h=packages/diffoscope
+# https://github.com/archlinux/svntogit-community/blob/packages/diffoscope/trunk/PKGBUILD
 RUN pacman -Syyu --needed --noconfirm base-devel diffoscope \
     binwalk bzip2 diffutils e2fsprogs enjarify llvm lz4 openssh \
     python-progressbar python-tlsh unzip tar xz

@@ -1,16 +1,13 @@
-.PHONY: all build run
+.PHONY: all build push
 
 name = diffoscope-arch:latest
 image = xatier/$(name)
 registry = ghcr.io/xatier
 
-all: build run
+all: build push
 
 build:
-	podman build --no-cache -t $(image) .
-
-run:
-	podman run -t --rm -w $(pwd) -v $(pwd):$(pwd):ro $(image)
+	podman build --squash --no-cache -t $(image) .
 
 push:
 	podman images $(image)
