@@ -26,8 +26,14 @@ jobs:
           password: ${{ env.REGISTRY_PASSWORD }}
           registry: ${{ env.IMAGE_REGISTRY }}
 
-      - name: Build and push
+      - name: '[arch-dev] Build and push'
+        working-directory: ./arch-dev
         run: |
-          cd arch-dev
+          make build
+          make push
+
+      - name: '[consider] Build and push'
+        working-directory: ./consider
+        run: |
           make build
           make push
