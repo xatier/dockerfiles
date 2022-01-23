@@ -37,3 +37,9 @@ jobs:
         run: |
           make build
           make push
+
+      - name: '[write-good] Build and push'
+        working-directory: ./write-good
+        run: |
+          make build
+          make push

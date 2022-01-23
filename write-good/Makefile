@@ -1,8 +1,15 @@
-.PHONY: all build
+.PHONY: all build push
 
-image = xatier/write-good:latest
+name = write-good:latest
+image = xatier/$(name)
+registry = ghcr.io/xatier
 
-all: build
+all: build push
 
 build:
-	podman build --no-cache -t $(image) .
+	podman build --squash --no-cache -t $(image) .
+
+push:
+	podman images $(image)
+	podman tag $(shell podman images $(image) -q) $(registry)/$(name)
+	podman push $(registry)/$(name)
