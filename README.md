@@ -10,12 +10,15 @@ This is my collection of Dockerfile.
 # this will build all subdirectories
 make
 ```
+## Pre-built images
+
+Weekly builds are available [here](https://github.com/xatier?tab=packages).
 
 ## Preserve the history
 
 I used to have the following dockerfiles, now consolidate them to one single repo for all kinds.
 
-- [popcorn-docker](https://github.com/xatier/popcorn-docker)
+- [popcorn-docker](https://github.com/xatier/popcorn-docker) (this has been removed)
 - [diffoscope-arch](https://github.com/xatier/diffoscope-arch)
 
 I do the following trick to preserve the commit history from the other repos.
