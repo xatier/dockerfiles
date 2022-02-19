@@ -1,5 +1,5 @@
 # use reflector to find faster mirrorlist
-From archlinux/archlinux:base as reflector
+FROM archlinux/archlinux:base as reflector
 RUN pacman -Syy --noconfirm --needed reflector
 RUN reflector --verbose --country 'United States' --latest 20 \
     --protocol https --age 12 --sort rate --save /mirrorlist
