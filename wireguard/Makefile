@@ -28,7 +28,7 @@ run:
 		--cap-add NET_RAW \
 		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
 		-p 127.0.0.1:1081:1081 \
-		$(image)
+		$(registry)/$(name)
 
 davy:
 	podman run --rm -it \
@@ -38,7 +38,7 @@ davy:
 		--cap-add NET_RAW \
 		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
 		-p 127.0.0.1:1082:1081 \
-		$(image)
+		$(registry)/$(name)
 
 az:
 	podman run --rm -it \
@@ -48,7 +48,7 @@ az:
 		--cap-add NET_RAW \
 		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
 		-p 127.0.0.1:1083:1081 \
-		$(image)
+		$(registry)/$(name)
 
 uk:
 	podman run --rm -it \
@@ -58,7 +58,7 @@ uk:
 		--cap-add NET_RAW \
 		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
 		-p 127.0.0.1:1084:1081 \
-		$(image)
+		$(registry)/$(name)
 
 jp:
 	podman run --rm -it \
@@ -68,4 +68,4 @@ jp:
 		--cap-add NET_RAW \
 		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
 		-p 127.0.0.1:1085:1081 \
-		$(image)
+		$(registry)/$(name)

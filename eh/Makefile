@@ -21,7 +21,8 @@ run:
 	podman run --rm -it \
 		-v $(data_path):/eh/ \
 		-v $(wg_conf):/srv/wg0.conf \
+		--userns keep-id \
 		--cap-add NET_ADMIN \
 		--cap-add NET_RAW \
 		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
-		$(image)
+		$(registry)/$(name)
