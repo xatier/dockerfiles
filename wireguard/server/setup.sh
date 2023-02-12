@@ -12,7 +12,7 @@ echo 'export TERM=xterm' >>~/.bashrc
 # full system update and install some helpful tools
 sudo apt update
 sudo apt upgrade -y
-sudo apt install -y git tmux mosh htop curl
+sudo apt install -y git tmux mosh htop curl dnsutils
 
 # install kernel headers and resolvconf
 sudo apt install -y linux-headers-cloud-amd64 resolvconf
