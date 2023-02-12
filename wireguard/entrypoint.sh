@@ -6,7 +6,7 @@ set -x
 sudo wg-quick up /srv/wg0.conf
 cat /etc/resolv.conf
 
-curl ipinfo.io
+curl -v ipinfo.io
 
 git clone https://github.com/xatier/toy-socks5.git
 cd toy-socks5
