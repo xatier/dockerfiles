@@ -9,7 +9,7 @@ cat /etc/resolv.conf
 curl ipinfo.io
 
 # shellcheck disable=SC1091
-sudo archlinux-java set java-11-openjdk
+sudo archlinux-java set java-17-openjdk
 archlinux-java status
 
 java -jar HentaiAtHome.jar

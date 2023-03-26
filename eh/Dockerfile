@@ -2,7 +2,7 @@ FROM ghcr.io/xatier/wireguard:latest
 
 USER root
 RUN pacman -Syuu --noconfirm --needed \
-    jre11-openjdk-headless
+    jre17-openjdk-headless
 
 COPY ./entrypoint.sh /srv/entrypoint.sh
 
