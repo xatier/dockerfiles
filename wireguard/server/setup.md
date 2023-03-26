@@ -86,6 +86,12 @@ cd ~/
 ~/wg.sh start
 ```
 
+- update config or script with remote editing over `scp`.
+
+```bash
+vimdiff wg.sh scp://<server>//home/<user>/wg.sh
+```
+
 ## IP management
 
 Sometimes Azure public IPs may be acting weird, previous users of these
