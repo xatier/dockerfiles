@@ -1,5 +1,9 @@
 # Dockerfiles
 
+<p align="center">
+<a href="https://github.com/xatier/dockerfiles/blob/master/.github/workflows/ghcr.yaml"><img alt="Build Status" src="https://github.com/xatier/dockerfiles/actions/workflows/ghcr.yaml/badge.svg"></a>
+</p>
+
 My Dockerfile collections.
 
 This is my collection of Dockerfile.
