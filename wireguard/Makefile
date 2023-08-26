@@ -22,7 +22,7 @@ push:
 
 run:
 	podman run --rm -it \
-		--name run \
+		--name $@ \
 		-v $(wg_conf):/srv/wg0.conf \
 		--cap-add NET_ADMIN \
 		--cap-add NET_RAW \
@@ -32,7 +32,7 @@ run:
 
 davy:
 	podman run --rm -it \
-		--name davy \
+		--name $@ \
 		-v $(davy_wg_conf):/srv/wg0.conf \
 		--cap-add NET_ADMIN \
 		--cap-add NET_RAW \
@@ -42,7 +42,7 @@ davy:
 
 az:
 	podman run --rm -it \
-		--name az \
+		--name $@ \
 		-v $(az_wg_conf):/srv/wg0.conf \
 		--cap-add NET_ADMIN \
 		--cap-add NET_RAW \
@@ -52,7 +52,7 @@ az:
 
 uk:
 	podman run --rm -it \
-		--name uk \
+		--name $@ \
 		-v $(uk_wg_conf):/srv/wg0.conf \
 		--cap-add NET_ADMIN \
 		--cap-add NET_RAW \
@@ -62,7 +62,7 @@ uk:
 
 jp:
 	podman run --rm -it \
-		--name jp \
+		--name $@ \
 		-v $(jp_wg_conf):/srv/wg0.conf \
 		--cap-add NET_ADMIN \
 		--cap-add NET_RAW \

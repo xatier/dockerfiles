@@ -19,6 +19,7 @@ push:
 
 run:
 	podman run --rm -it \
+		--name $@ \
 		-v $(data_path):/eh/ \
 		-v $(wg_conf):/srv/wg0.conf \
 		--userns keep-id \
