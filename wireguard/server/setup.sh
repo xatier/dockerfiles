@@ -14,8 +14,8 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt install -y git tmux mosh htop curl dnsutils
 
-# install kernel headers and resolvconf
-sudo apt install -y linux-headers-cloud-amd64 resolvconf
+# install kernel headers and systemd-resolved
+sudo apt install -y linux-headers-cloud-amd64 systemd-resolved
 
 # restart systemd-resolved and ensure /etc/resolv.conf is configured properly
 sudo systemctl restart systemd-resolved

@@ -1,10 +1,16 @@
-# Setup wireguard on Debian 11 Bullseye on Azure VM
+# Setup wireguard on Debian 12 Bookworm on Azure VM
 
 ## Azure VM creation
 
 ```text
-image: Debian 11 "Bullseye" - Gen2
+image: Debian 12 "Bookworm" - Gen2
 size: Standard B1ls - 1 vcpu, 0.5 GiB memory (~$5/mo)
+```
+
+- login to Azure account
+
+```bash
+az login --use-device-code --tenant <yourdiretory.onmicrosoft.com>
 ```
 
 - find available Debian images
@@ -61,7 +67,7 @@ cd wg
 ```bash
 ~/wg.sh keygen
 
-# add the server key pairs to wg0.conf
+# set server port and add the server key pairs to wg0.conf
 vim wg0.conf
 ```
 

@@ -6,7 +6,7 @@ AZURE_GROUP_NAME=""
 AZURE_REGION=""
 
 VM_NAME=""
-VM_IMAGE="Debian:debian-11:11-gen2:latest"
+VM_IMAGE="Debian:debian-12:12-gen2:latest"
 VM_USERNAME=""
 
 # the SSH public key stored in Azure
