@@ -113,6 +113,6 @@ vim ./new_ip.sh
 ./new_ip.sh
 ```
 
-One the new IP has been created, navigate to **Azure Public IP Addresses
+Once the new IP has been created, navigate to **Azure Public IP Addresses
 service**, select the newly created IP, then *Associate* it to a VM's
 network interface.
