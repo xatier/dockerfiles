@@ -16,11 +16,11 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # https://github.com/redhat-actions/podman-login
       - name: Log in to ghcr.io
-        uses: redhat-actions/podman-login@v1.5
+        uses: redhat-actions/podman-login@v1.6
         with:
           username: ${{ env.REGISTRY_USER }}
           password: ${{ env.REGISTRY_PASSWORD }}
