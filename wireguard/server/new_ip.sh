@@ -2,7 +2,8 @@
 
 # this script creates new IP on Azure,
 # once the new public IP has been created,
-# we can then associate the public IP with the VMs in Azure Portal
+# dissociate the old public IP from the Network interface card,
+# then associate the public IP with the VMs in Azure Portal
 
 set -ueo pipefail
 
