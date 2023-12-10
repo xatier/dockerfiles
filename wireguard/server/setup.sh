@@ -5,9 +5,13 @@ VM_NAME="$1"
 set -ueo pipefail
 set -x
 
-# proper TERM setup
+# proper TERM and bashrc setup
 export TERM=xterm
-echo 'export TERM=xterm' >>~/.bashrc
+{
+    echo 'export TERM=xterm'
+    echo 'export EDITOR=vim'
+    echo "alias ta='tmux attach -d'"
+} >>~/.bashrc
 
 # full system update and install some helpful tools
 sudo apt update
