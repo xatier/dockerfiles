@@ -4,15 +4,15 @@
 
 set -euxo pipefail
 
-wget http://www.tkl.iis.u-tokyo.ac.jp/~ynaga/jagger/jagger-latest.tar.gz
+wget -q http://www.tkl.iis.u-tokyo.ac.jp/~ynaga/jagger/jagger-latest.tar.gz
 tar zxvf jagger-latest.tar.gz
 pushd jagger-2023-02-18 || exit 1
 
 # 1) prepare a dictionary in the format compatible with mecab-jumandic (cf. mecab-jumandic-7.0-20130310.tar.gz)
-wget https://github.com/shogo82148/mecab/releases/download/v0.996.8/mecab-jumandic-7.0-20130310.tar.gz
-wget http://www.tkl.iis.u-tokyo.ac.jp/~ynaga/jagger/mecab-jumandic-7.0-20130310.patch
+wget -q https://github.com/shogo82148/mecab/releases/download/v0.996.9/mecab-jumandic-7.0-20130310.tar.gz
+wget -q http://www.tkl.iis.u-tokyo.ac.jp/~ynaga/jagger/mecab-jumandic-7.0-20130310.patch
 tar zxvf mecab-jumandic-7.0-20130310.tar.gz
-patch -R -p0 < mecab-jumandic-7.0-20130310.patch # correct gabled text in AuxV.csv
+patch -R -p0 <mecab-jumandic-7.0-20130310.patch # correct gabled text in AuxV.csv
 
 # 2) Use the Kyoto University Web Document Leads Corpus (default)
 git clone https://github.com/ku-nlp/KWDLC
