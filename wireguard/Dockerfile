@@ -3,6 +3,7 @@ FROM ghcr.io/xatier/arch-dev:latest
 USER root
 RUN pacman -Syuu --noconfirm --needed \
     dante \
+    gnu-netcat \
     go \
     mtr \
     openresolv \
