@@ -42,8 +42,8 @@ RUN makepkg -sri --needed --noconfirm
 # cleanup
 WORKDIR /home/xatier
 RUN sudo paccache -rfk0 && \
-    rm -rf /home/xatier/yay && \
-    rm -rf /home/xatier/.cache/yay
+    sudo rm -rf /home/xatier/yay && \
+    sudo rm -rf /home/xatier/.cache/yay
 
 ENV EDITOR vim
 
