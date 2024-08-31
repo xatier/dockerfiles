@@ -2,7 +2,8 @@
 FROM archlinux/archlinux:base as reflector
 RUN pacman -Syy --noconfirm --needed reflector
 RUN reflector --verbose --country 'United States' --latest 20 \
-    --protocol https --age 12 --sort rate --save /mirrorlist
+    --protocol https --age 24 --sort rate --save /mirrorlist
+RUN cat /mirrorlist
 
 FROM archlinux/archlinux:base
 
