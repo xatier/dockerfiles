@@ -18,6 +18,8 @@ az login --use-device-code --tenant <yourdiretory.onmicrosoft.com>
 ```bash
 # az location to use
 az account list-locations --output table
+# alternatively
+az fzf location
 
 # find Debian offers
 az vm image list-offers --location <location> --publisher Debian --output table

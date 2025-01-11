@@ -19,7 +19,7 @@ az network public-ip create \
     --location "$AZURE_REGION" \
     --name "$name" \
     --allocation-method Dynamic \
-    --sku Basic \
+    --sku Standard \
     --version IPv4 \
     --tier Regional
 

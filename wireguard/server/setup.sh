@@ -13,6 +13,12 @@ export TERM=xterm
     echo "alias ta='tmux attach -d'"
 } >>~/.bashrc
 
+# disable mouse
+{
+    echo 'set mouse='
+    echo 'set ttymouse='
+} >>~/.vimrc
+
 # full system update and install some helpful tools
 sudo apt update
 sudo apt upgrade -y

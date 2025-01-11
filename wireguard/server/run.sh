@@ -12,8 +12,11 @@ VM_USERNAME=""
 # the SSH public key stored in Azure
 VM_SSH_PUBLIC_KEY=""
 
+# the private key of the above RSA public key
+VM_SSH_KEY_RSA=""
+
 # the local ed25519 key to be uploaded to the new VM
-VM_SSH_PUBLIC_KEY_ED25519=""
+VM_SSH_KEY_ED25519=""
 
 WG_PORT=""
 
@@ -29,7 +32,7 @@ az vm create \
     --image "$VM_IMAGE" \
     --size Standard_B1ls \
     --storage-sku Standard_LRS \
-    --public-ip-sku Basic
+    --public-ip-sku Standard
 
 sleep 5
 
@@ -64,8 +67,10 @@ IP="$(
 
 # copy over the ed25519 key
 ssh-keyscan -t ssh-ed25519 "$IP" >>"$HOME/.ssh/known_hosts"
-ssh-copy-id -i "$VM_SSH_PUBLIC_KEY_ED25519" "$IP"
+ssh-copy-id -f -i "$VM_SSH_KEY_ED25519.pub" \
+    -o "IdentityFile $VM_SSH_KEY_RSA" "$IP"
 
 set +e
-scp setup.sh "$IP:~/"
-ssh -t "$IP" "chmod +x setup.sh && ./setup.sh $VM_NAME"
+scp -i "$VM_SSH_KEY_ED25519" setup.sh "$IP:~/"
+ssh -i "$VM_SSH_KEY_ED25519" -t "$IP" "chmod +x setup.sh && ./setup.sh $VM_NAME"
+set -e
