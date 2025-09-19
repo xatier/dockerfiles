@@ -6,7 +6,7 @@ AZURE_GROUP_NAME=""
 AZURE_REGION=""
 
 VM_NAME=""
-VM_IMAGE="Debian:debian-12:12-gen2:latest"
+VM_IMAGE="Debian:debian-13:13-gen2:latest"
 VM_USERNAME=""
 
 # the SSH public key stored in Azure
@@ -36,9 +36,10 @@ az vm create \
 
 sleep 5
 
-az vm boot-diagnostics enable \
-    --resource-group "$AZURE_GROUP_NAME" \
-    --name "$VM_NAME"
+# broken command, disable for now
+# az vm boot-diagnostics enable \
+#     --resource-group "$AZURE_GROUP_NAME" \
+#     --name "$VM_NAME"
 
 az vm open-port \
     --resource-group "$AZURE_GROUP_NAME" \

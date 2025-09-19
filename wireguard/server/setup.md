@@ -1,9 +1,9 @@
-# Setup wireguard on Debian 12 Bookworm on Azure VM
+# Setup wireguard on Debian 13 Trixie on Azure VM
 
 ## Azure VM creation
 
 ```text
-image: Debian 12 "Bookworm" - Gen2
+image: Debian 13 "Trixie" - Gen2
 size: Standard B1ls - 1 vcpu, 0.5 GiB memory (~$5/mo)
 ```
 

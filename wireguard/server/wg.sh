@@ -15,13 +15,12 @@ down() {
 
 keygen() {
     set -x
-    wg genkey | tee privatekey | wg pubkey > publickey
+    wg genkey | tee privatekey | wg pubkey >publickey
     chmod 400 publickey privatekey
     set +x
     echo "public key: $(cat publickey)"
     echo "privatekey key: $(cat privatekey)"
 }
-
 
 if [ "$1" == "start" ]; then
     up
