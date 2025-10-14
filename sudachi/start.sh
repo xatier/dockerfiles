@@ -10,10 +10,10 @@ sudo pacman -Syuu --noconfirm --needed jre-openjdk-headless unzip
 wget -q https://github.com/WorksApplications/Sudachi/releases/download/v0.7.5/sudachi-0.7.5-executable.zip
 
 # http://sudachi.s3-website-ap-northeast-1.amazonaws.com/sudachidict/
-wget -q http://sudachi.s3-website-ap-northeast-1.amazonaws.com/sudachidict/sudachi-dictionary-20250129-full.zip
+wget -q http://sudachi.s3-website-ap-northeast-1.amazonaws.com/sudachidict/sudachi-dictionary-20250825-full.zip
 
 unzip sudachi-0.7.5-executable.zip
-unzip sudachi-dictionary-20250129-full.zip
+unzip sudachi-dictionary-20250825-full.zip
 
-sudo archlinux-java set java-23-openjdk
+sudo archlinux-java set java-25-openjdk
 archlinux-java status
