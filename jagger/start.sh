@@ -9,7 +9,7 @@ tar zxvf jagger-latest.tar.gz
 pushd jagger-2024-03-14 || exit 1
 
 # 1) prepare a dictionary in the format compatible with mecab-jumandic (cf. mecab-jumandic-7.0-20130310.tar.gz)
-wget -q https://github.com/shogo82148/mecab/releases/download/v0.996.11/mecab-jumandic-7.0-20130310.tar.gz
+wget -q https://github.com/shogo82148/mecab/releases/download/v0.996.12/mecab-jumandic-7.0-20130310.tar.gz
 wget -q http://www.tkl.iis.u-tokyo.ac.jp/~ynaga/jagger/mecab-jumandic-7.0-20130310.patch
 tar zxvf mecab-jumandic-7.0-20130310.tar.gz
 patch -R -p0 <mecab-jumandic-7.0-20130310.patch # correct gabled text in AuxV.csv
