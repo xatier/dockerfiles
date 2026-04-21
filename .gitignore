@@ -1,3 +1,4 @@
 wireguard/venv/*
 wireguard/.mypy_cache/*
 .vscode/
+steam/data/*
