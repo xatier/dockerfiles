@@ -23,7 +23,9 @@ push:
 run:
 	podman run --rm -it \
 		--name $@ \
-		-v $(wg_conf):/srv/wg0.conf \
+		--read-only \
+		-v $(wg_conf):/srv/wg0.conf:ro \
+		-v $(shell pwd)/resolv.conf:/etc/resolv.conf:ro \
 		--cap-add NET_ADMIN \
 		--cap-add NET_RAW \
 		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
@@ -33,7 +35,9 @@ run:
 davy:
 	podman run --rm -it \
 		--name $@ \
-		-v $(davy_wg_conf):/srv/wg0.conf \
+		--read-only \
+		-v $(davy_wg_conf):/srv/wg0.conf:ro \
+		-v $(shell pwd)/resolv.conf:/etc/resolv.conf:ro \
 		--cap-add NET_ADMIN \
 		--cap-add NET_RAW \
 		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
@@ -43,7 +47,9 @@ davy:
 az:
 	podman run --rm -it \
 		--name $@ \
-		-v $(az_wg_conf):/srv/wg0.conf \
+		--read-only \
+		-v $(az_wg_conf):/srv/wg0.conf:ro \
+		-v $(shell pwd)/resolv.conf:/etc/resolv.conf:ro \
 		--cap-add NET_ADMIN \
 		--cap-add NET_RAW \
 		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
@@ -53,7 +59,9 @@ az:
 uk:
 	podman run --rm -it \
 		--name $@ \
-		-v $(uk_wg_conf):/srv/wg0.conf \
+		--read-only \
+		-v $(uk_wg_conf):/srv/wg0.conf:ro \
+		-v $(shell pwd)/resolv.conf:/etc/resolv.conf:ro \
 		--cap-add NET_ADMIN \
 		--cap-add NET_RAW \
 		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
@@ -63,7 +71,9 @@ uk:
 jp:
 	podman run --rm -it \
 		--name $@ \
-		-v $(jp_wg_conf):/srv/wg0.conf \
+		--read-only \
+		-v $(jp_wg_conf):/srv/wg0.conf:ro \
+		-v $(shell pwd)/resolv.conf:/etc/resolv.conf:ro \
 		--cap-add NET_ADMIN \
 		--cap-add NET_RAW \
 		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
