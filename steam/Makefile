@@ -13,6 +13,7 @@ build:
 run:
 	# group IDs: for g in video input render; do getent group $g; done
 	# to copy screenshot files: podman cp steam:/tmp/2173800_3.jpg .
+	# $ for img in $(podman exec -i steam bash -c 'ls -1 /tmp/*.jpg'); do podman cp steam:"$img" .; done
 	xhost +local:
 	podman run -it --rm \
 		--name steam \
