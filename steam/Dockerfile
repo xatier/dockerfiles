@@ -31,7 +31,6 @@ RUN pacman -Syuu --noconfirm --needed steam \
     lib32-libxrandr \
     lib32-libxrender \
     lib32-libxtst \
-    lib32-openal \
     lib32-sdl2 \
     xdg-utils xdg-desktop-portal-impl \
     noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
