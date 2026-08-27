@@ -6,7 +6,6 @@ RUN pacman -Syuu --noconfirm --needed \
     openbsd-netcat \
     go \
     mtr \
-    openresolv \
     wireguard-tools
 
 COPY ./sockd.conf /srv/sockd.conf

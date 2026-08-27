@@ -25,9 +25,12 @@ run:
 		--name $@ \
 		--read-only \
 		-v $(wg_conf):/srv/wg0.conf:ro \
-		-v $(shell pwd)/resolv.conf:/etc/resolv.conf:ro \
+		--cap-drop ALL \
+		--cap-add SETUID \
+		--cap-add SETGID \
 		--cap-add NET_ADMIN \
 		--cap-add NET_RAW \
+		--dns 1.1.1.1 \
 		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
 		-p 127.0.0.1:1081:1081 \
 		$(registry)/$(name)
@@ -37,9 +40,12 @@ davy:
 		--name $@ \
 		--read-only \
 		-v $(davy_wg_conf):/srv/wg0.conf:ro \
-		-v $(shell pwd)/resolv.conf:/etc/resolv.conf:ro \
+		--cap-drop ALL \
+		--cap-add SETUID \
+		--cap-add SETGID \
 		--cap-add NET_ADMIN \
 		--cap-add NET_RAW \
+		--dns 1.1.1.1 \
 		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
 		-p 127.0.0.1:1082:1081 \
 		$(registry)/$(name)
@@ -49,9 +55,12 @@ az:
 		--name $@ \
 		--read-only \
 		-v $(az_wg_conf):/srv/wg0.conf:ro \
-		-v $(shell pwd)/resolv.conf:/etc/resolv.conf:ro \
+		--cap-drop ALL \
+		--cap-add SETUID \
+		--cap-add SETGID \
 		--cap-add NET_ADMIN \
 		--cap-add NET_RAW \
+		--dns 1.1.1.1 \
 		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
 		-p 127.0.0.1:1083:1081 \
 		$(registry)/$(name)
@@ -61,9 +70,12 @@ uk:
 		--name $@ \
 		--read-only \
 		-v $(uk_wg_conf):/srv/wg0.conf:ro \
-		-v $(shell pwd)/resolv.conf:/etc/resolv.conf:ro \
+		--cap-drop ALL \
+		--cap-add SETUID \
+		--cap-add SETGID \
 		--cap-add NET_ADMIN \
 		--cap-add NET_RAW \
+		--dns 1.1.1.1 \
 		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
 		-p 127.0.0.1:1084:1081 \
 		$(registry)/$(name)
@@ -73,9 +85,12 @@ jp:
 		--name $@ \
 		--read-only \
 		-v $(jp_wg_conf):/srv/wg0.conf:ro \
-		-v $(shell pwd)/resolv.conf:/etc/resolv.conf:ro \
+		--cap-drop ALL \
+		--cap-add SETUID \
+		--cap-add SETGID \
 		--cap-add NET_ADMIN \
 		--cap-add NET_RAW \
+		--dns 1.1.1.1 \
 		--sysctl net.ipv4.conf.all.src_valid_mark=1 \
 		-p 127.0.0.1:1085:1081 \
 		$(registry)/$(name)
