@@ -32,6 +32,7 @@ run:
 		-v "/run/user/$(shell id -u)/bus:/run/user/$(shell id -u)/bus:ro" \
 		-v "/run/user/$(shell id -u)/pipewire-0:/run/user/$(shell id -u)/pipewire-0:Z" \
 		-v "/run/user/$(shell id -u)/pulse/native:/run/user/$(shell id -u)/pulse/native:Z" \
+		-v $(shell pwd)/machine-id:/etc/machine-id:ro \
 		-v "./data/config:/home/xatier/.steam" \
 		-v "./data/library:/home/xatier/.local/share/Steam" \
 		--network host \
