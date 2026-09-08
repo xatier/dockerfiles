@@ -8,7 +8,7 @@ RUN echo '[multilib]' >> /etc/pacman.conf && \
 
 # remove NoExtract BS so we can install the locale files
 RUN sed -i /NoExtract/d /etc/pacman.conf
-RUN pacman -Syuu --noconfirm --needed base glibc
+RUN pacman -Syuu --noconfirm base glibc
 
 RUN echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen && \
     echo 'zh_TW.UTF-8 UTF-8' >> /etc/locale.gen && \
@@ -26,17 +26,21 @@ RUN pacman -Syuu --noconfirm --needed steam \
     lib32-libice \
     lib32-libpulse \
     lib32-libsm \
-    lib32-libvdpau \
     lib32-libxi \
     lib32-libxrandr \
     lib32-libxrender \
     lib32-libxtst \
-    lib32-sdl2 \
-    xdg-utils xdg-desktop-portal-impl \
+    xdg-utils xdg-desktop-portal-gtk \
     noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 
 WORKDIR /home/xatier
 USER xatier
+
+RUN yay -S --answerdiff None --noconfirm \
+    lib32-libvdpau \
+    lib32-openal \
+    lib32-sdl2
+
 RUN mkdir -p /home/xatier/.steam /home/xatier/.local/share/Steam
 
 ENV XMODIFIERS=@im=none \
